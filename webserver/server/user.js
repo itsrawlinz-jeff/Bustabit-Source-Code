@@ -324,7 +324,8 @@ exports.account = function(req, res, next) {
         user.withdrawals = !withdrawals.sum ? 0 : withdrawals.sum;
         user.giveaways = !giveaways.sum ? 0 : giveaways.sum;
         user.net_profit = net.profit;
-        user.deposit_address = lib.deriveAddress(user.id);
+        user.deposit_address = 5;
+        // lib.deriveAddress(user.id);
 
         res.render('account', { user: user });
     });
@@ -620,7 +621,8 @@ exports.deposit = function(req, res, next) {
             return next(new Error('Unable to get deposits: \n' + err));
         }
         user.deposits = deposits;
-        user.deposit_address = lib.deriveAddress(user.id);
+        user.deposit_address = 5; //
+        // lib.deriveAddress(user.id);
         res.render('deposit', { user:  user });
     });
 };

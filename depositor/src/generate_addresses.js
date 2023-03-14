@@ -9,7 +9,8 @@ debug('Generating %n addresses', count);
 console.log('{');
 
 for (var i = 1; i <= count; ++i) {
-  var address = lib.deriveAddress(i);
+  var address = 4; //changed
+  // lib.deriveAddress(i);
   console.log('"' + address + '": ' + i + (i != count ? ',' : ''));
 }
 
